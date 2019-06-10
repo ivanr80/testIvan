@@ -1,0 +1,39 @@
+        <div class= "row" ng-controller="prodottiController">
+            
+            <div class="col-xs-3">
+                <!-- class="btn" componente grafico di bootstrap-->
+                <button class="btn btn-primary btn-block" 
+                    ng-click="selezionaCategoria('')">Tutte</button>
+                
+                <!-- chiamata al filtro
+                primoParametro | nomeFiltro:'secondoParametro'
+                {{prodotti | mioDistinct:'categoria'}}            
+                -->
+                <button class="btn btn-primary btn-block"
+                        ng-repeat="cat in prodotti | mioDistinct:'categoria'"
+                        ng-click="selezionaCategoria(cat)">
+                    {{cat}}
+                </button>
+            </div>
+            
+            <div class="col-xs-7">
+                
+                <div ng-if="prodotti.length==0"> Non ci sono prodotti </div>
+                
+                <!-- NOME PRODOTTO ciclo sull'oggetto prodotti filtrato dalle sole categorie "categoriaSelezionata" -->
+                <div class=well ng-repeat="prod in prodotti | filter:{categoria : categoriaSelezionata}">
+                    {{prod.nome}} 
+                <!-- PREZZO <b>PREZZO: {{prod.prezzo | currency: '€' : 4 }}</b>  -->
+                    <b class="pull-right">PREZZO: {{prod.prezzo | mioCurrency: '€' : 4 }}</b>
+                    {{prod.disponibile ? 'Disponibile' : 'Non disponibile'}}
+
+                    <!--BOTTONE AGGIUNGI: a ogni prodotto aggiungiamo il pulsante Acquista-->
+                    <button class="text-center" 
+                            ng-click="aggiungi(prod)"
+                            ng-disabled="!prod.disponibile">
+                        <span class="glyphicon glyphicon-plus"></span>  <!-- aggiunta bottone + di bootstrap -->
+                    </button>
+                </div>
+                
+            </div>
+        </div>

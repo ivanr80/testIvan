@@ -1,0 +1,15 @@
+{
+    "prodotti":[{
+        "id":1,
+        "descrizione":"Delle scarpe...",
+        "categoria":"Abbigliamento",
+        "prezzo":40
+    },
+    {
+        "id":2,
+        "descrizione":"Delle scarpe da pioggia...",
+        "categoria":"Stivalii",
+        "prezzo":20
+    }]
+    
+}

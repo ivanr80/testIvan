@@ -1,0 +1,37 @@
+<div class= "row" ng-controller="dettagliCarrelloController">
+    <a href="#!/prodotti">Torna agli acquisti</a>
+    <!-- {{dati}} -->
+    <table class="table table-striped">
+        <tr>
+            <td>Prodotto</td>
+            <td>Prezzo</td>
+            <td>Subtotale</td>
+            <td>Quantita</td>
+        </tr>
+        <tr ng-repeat="riga in dati">
+            <td>{{riga.nomeProdotto}}</td>
+            <td>{{riga.prezzo | mioCurrency}}</td>
+            <td>{{riga.prezzo * riga.quantita | mioCurrency}}</td>
+            <td>{{riga.quantita}}</td>
+        </tr>
+        <tr>
+            <th colspan="2">TOTALE QUANTITA</th>
+            <th>{{totaleQuantita}}</th>
+        </tr>
+        <tr>
+            <th colspan="2">TOTALE VALORE</th>
+            <th>{{totaleValore | mioCurrency}}</th>
+        </tr>
+    </table>
+    
+    <!-- novalidate ----- HTML5 -->
+    <form name="formOrdine" novalidate ng-submit="inviaOrdine()">
+        <!--//tag form utile per getsire la validazione-->
+        <label>Nome</label>
+        <!-- ng-model = 1-cerca la variabile e nel caso la crea. 2-sincronizza la view con controller -->
+        <input type="text" ng-model="nomeUtente" required>  
+        
+        <input type="submit">
+    </form>
+    
+</div>

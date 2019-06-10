@@ -1,0 +1,43 @@
+<!doctype html>
+<html ng-app="mioNegozio">
+    <head>
+    <title>Il mio negozio</title>
+        <meta charset="utf-8">
+        <!-- Importazione librerie del framework
+             Inizializza gli oggetti necessari
+             Avvia il ciclo di vita
+         -->
+        <script src="angular.js"></script>
+        <!-- definisce il modulo per il rooting (navigazione interna) -->
+        <script src="angular-route.js"></script>
+        
+        <!-- include dei nostri js -->
+            <script src="index.js"></script>
+            <script src="filtri.js"></script>
+            <!-- file del carrello -->
+            <script src="carrello/carrello.js"></script>
+            <script src="carrello/carrelloService.js"></script>
+            <script src="carrello/carrelloDirective.js"></script>
+        
+        <!-- import della componente layout di bootstrap -->
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+        
+        
+    </head>
+    
+    <body class="container">
+        <div class="row">
+	       <h1>IL MIO NEGOZIO</h1>
+            <span class="badge"> <indicatore-carrello></indicatore-carrello></span>
+            <a href="#!/dettagliCarrello">Vai al carrello</a>
+        </div>
+        
+        <!--inclusione puntuale di un file HTML 
+        <div ng-include="'prodotti.html'"></div>
+        -->
+        <!-- tag per il rooting -->
+        <ng-view></ng-view>
+        
+    </body>
+    
+</html>

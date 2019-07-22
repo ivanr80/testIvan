@@ -1,0 +1,46 @@
+
+**** APPUNTI
+
+Link utili:
+
+AgularJs: documentazoine:
+https://docs.angularjs.org/api/ngRoute
+
+bootstrap:
+https://getbootstrap.com/docs/3.3/components/
+
+ESScript:
+http://es6-features.org/#Constants
+
+NODE:
+https://nodejs.org/api/process.html#process_process_argv
+
+https://nodeschool.io/it/#workshopper-list
+
+https://eslint.org/
+
+
+
+****************
+myApp AgularJS
+***************
+
+1) creare file HTML es "index"
+ - nel tag HEAD includere librerie framework AngularJS come segue:
+	
+	    <!-- Importazione librerie del framework Inizializza gli oggetti necessari Avvia il ciclo di vita -->
+        <script src="angular.js"></script>
+        <!-- definisce il modulo per il rooting (navigazione interna) -->
+        <script src="angular-route.js"></script>
+ 
+ >>>> NB: questi sono scaricabili dalla versione di AngualrJS a questo link:  https://code.angularjs.org/1.7.8/
+ 
+ 2) creare relativo file .JS definendo il nome APP e un controller:
+ 
+ angular.module('myApp', [])
+    
+    .controller("userController", function($scope){
+           $scope.utente = {nome: "Mario", cognome: "Rossi"};
+    })
+ 
+ 
